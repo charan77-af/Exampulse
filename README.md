@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ExamPulse
 
-## Getting Started
+**Know what to study first — backed by real search signal, not guesswork.**
 
-First, run the development server:
+Built for the SerpApi India Hackathon 2026.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## What it does
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Students paste in their syllabus topics. ExamPulse pulls real, live search-interest
+data for each topic using SerpApi's Google Trends engine, scores each one's
+"urgency" (0–100), and uses Gemini to generate a short reason why each topic
+matters right now. Topics are ranked highest-urgency first, so students know
+exactly where to focus their limited study time.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js (App Router, TypeScript, Tailwind CSS)
+- SerpApi — Google Trends engine
+- Gemini API
+- Deployed on Vercel
 
-## Learn More
+## Getting Started (Run Locally)
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repo:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   git clone https://github.com/charan77-af/Exampulse.git
+   cd Exampulse
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install dependencies:
 
-## Deploy on Vercel
+   npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Create a .env.local file in the project root with:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   SERPAPI_KEY=your_serpapi_key_here
+   GEMINI_API_KEY=your_gemini_key_here
+
+   - Get a free SerpApi key at https://serpapi.com
+   - Get a free Gemini API key at https://aistudio.google.com/apikey
+
+4. Run the development server:
+
+   npm run dev
+
+5. Open http://localhost:3000 and paste in some syllabus topics to see it in action.
+
+## Live Demo
+
+https://exampulse-ochre.vercel.app/
